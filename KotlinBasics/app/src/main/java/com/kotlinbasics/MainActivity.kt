@@ -10,6 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.key.Key.Companion.I
 import androidx.compose.ui.tooling.preview.Preview
 import com.kotlinbasics.ui.theme.KotlinBasicsTheme
 
@@ -27,12 +28,12 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        week03Variables()
-        week03Functions()
-        week04Classes()
+        //week03Variables()
+        //week03Functions()
+        //week04Classes()
+        week04Collections()
     }
 }
-
 private fun week03Variables() {
     println("Week 03: Variables")
 
@@ -131,6 +132,27 @@ private fun week04Classes() {
     println("Person1: ${person1.age}")
     println("Person2: ${person2.name}")
     println("Person2: ${person2.age}")
+}
+
+private fun week04Collections(){
+    println("=============== kotlin Collectrions =================")
+
+    val fruits = listOf("apple", "banana", "orange") //리스트 추가 불가
+    val mutableFruits = mutableListOf("kiwi", "watermelon") //리스트 추가 가능
+
+    mutableFruits.add("banana")
+    println("Fruits $fruits")
+    println("Mutable Fruits: $mutableFruits")
+
+    val scores = mapOf("Kim" to 100, "Park" to 96, "Lee" to 97)
+    println("Scroes: $scores")
+
+    for(fruit in mutableFruits) {
+        println("I like $fruit")
+    }
+
+    scores.forEach{(name, score) -> println("$name scored $score")}
+    fruits.forEach{fruit -> println("$fruit")}
 }
 
 @Composable
